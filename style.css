@@ -1,3 +1,27 @@
-h1, p {
+h1,
+p {
   font-family: Lato;
+}
+li {
+  list-style: none;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  padding: 16px;
+  margin: 16px;
+  background-color: blueviolet;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  max-width: 300px;
+}
+
+.searchbox {
+  margin: 16px;
+  height: 30px;
+  width: 300px;
+}
+
+ul {
+  padding: 0;
 }
