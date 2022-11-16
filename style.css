@@ -25,3 +25,29 @@ li {
 ul {
   padding: 0;
 }
+
+.post {
+  border: 1px solid black;
+  margin-bottom: 16px;
+  padding: 8px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.tabs > button {
+  padding: 4px;
+  cursor: pointer;
+}
+
+.tabs > button.active {
+  background-color: blueviolet;
+  color: white;
+}
+
+.note {
+  background-color: pink;
+  padding: 4px;
+}

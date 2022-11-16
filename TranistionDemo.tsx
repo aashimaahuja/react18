@@ -5,6 +5,8 @@ import './style.css';
 export const TransitionDemo = () => {
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = React.useState([]);
+  const [filter, setFilter] = useState('');
+
   const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
@@ -23,6 +25,7 @@ export const TransitionDemo = () => {
     const value = e.target.value;
     const filteredItems = items.filter((item) => item.includes(value));
 
+    setFilter(value);
     startTransition(() => {
       setFilteredItems([...filteredItems]);
     });
@@ -39,8 +42,8 @@ export const TransitionDemo = () => {
         <div>Loading...</div>
       ) : (
         <ul>
-          {filteredItems.map((item) => (
-            <li>{item}</li>
+          {filteredItems.map((item, index) => (
+            <li key={index}>{item}</li>
           ))}
         </ul>
       )}
