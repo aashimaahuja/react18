@@ -3,6 +3,7 @@ import { useState } from 'react';
 import SuspenseDemo from './SuspenseDemo';
 import { TransitionDemo } from './TranistionDemo';
 import './style.css';
+import DeferredValueDemo from './DefferedValueDemo';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('suspenseDemo');
@@ -17,6 +18,12 @@ export default function App() {
           Transition Demo
         </button>
         <button
+          className={activeTab === 'deferredValueDemo' ? 'active' : null}
+          onClick={() => setActiveTab('deferredValueDemo')}
+        >
+          DeferredValue Demo
+        </button>
+        <button
           className={activeTab === 'suspenseDemo' ? 'active' : null}
           onClick={() => setActiveTab('suspenseDemo')}
         >
@@ -24,7 +31,9 @@ export default function App() {
         </button>
       </div>
 
-      {activeTab === 'transitionDemo' ? <TransitionDemo /> : <SuspenseDemo />}
+      {activeTab === 'transitionDemo' && <TransitionDemo />}
+      {activeTab === 'deferredValueDemo' ?  <DeferredValueDemo /> :
+      <SuspenseDemo />}
     </div>
   );
 }
