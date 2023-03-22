@@ -4,9 +4,12 @@ import SuspenseDemo from './SuspenseDemo';
 import { TransitionDemo } from './TranistionDemo';
 import './style.css';
 import DeferredValueDemo from './DefferedValueDemo';
+import { UseEffectDemo } from './UseEffectDemo';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('suspenseDemo');
+
+  
 
   return (
     <div>
@@ -29,11 +32,19 @@ export default function App() {
         >
           Suspense Demo
         </button>
+        <button
+          className={activeTab === 'useEffectDemo' ? 'active' : null}
+          onClick={() => setActiveTab('useEffectDemo')}
+        >
+          Use Effect Demo
+        </button>
       </div>
 
       {activeTab === 'transitionDemo' && <TransitionDemo />}
-      {activeTab === 'deferredValueDemo' ?  <DeferredValueDemo /> :
-      <SuspenseDemo />}
+      {activeTab === 'useEffectDemo' && <UseEffectDemo />}
+      {activeTab === 'deferredValueDemo' && <DeferredValueDemo />}
+      {activeTab === 'suspenseDemo' && <SuspenseDemo />}
+      
     </div>
   );
 }
